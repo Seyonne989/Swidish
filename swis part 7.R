@@ -1,4 +1,4 @@
-download(leadlet)
+download(leaflet)
 install(leaflet)
 # part 1-3
 leaflet(
@@ -13,7 +13,9 @@ leaflet(
     weight = 3,
     opacity = 0.7,
     fillColor = "white",
-    fillOpacity = 1
+    fillOpacity = 1,
+    # part 7
+    highlightOptions = highlightOptions(color = "darkred", opacity = 1)
   ) %>%
   # part 6
   addMarkers(
