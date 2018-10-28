@@ -11,14 +11,25 @@ leaflet(
   addPolygons(
     color = "red",
     weight = 3,
-    opacity = 0.7,
+    opacity = 0.3,
     fillColor = "white",
     fillOpacity = 1,
     # part 7
-    highlightOptions = highlightOptions(color = "darkred", opacity = 1)
+    highlightOptions = highlightOptions(color = "darkred", opacity = 1),
+    label = ~NAME_1
   ) %>%
   # part 6
   addMarkers(
     lng = gadmCHE@polygons[[6]]@labpt[1],
     lat = gadmCHE@polygons[[6]]@labpt[2]
+  )%>%
+  #parts 9 - 10
+  addMeasure(
+    primaryLengthUnit = "kilometers",
+    primaryAreaUnit = "sqmeters"
+  )%>%
+  addMiniMap (
+    tiles = providers$Esri.WorldGrayCanvas,
+    toggleDisplay = TRUE,
+    minimized = TRUE
   )
